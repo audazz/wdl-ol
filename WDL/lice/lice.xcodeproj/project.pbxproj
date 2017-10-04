@@ -588,6 +588,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = lice;
+				SDKROOT = macosx10.13;
 				SKIP_INSTALL = YES;
 				SYMROOT = "build-mac";
 			};
@@ -607,6 +608,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = lice;
+				SDKROOT = macosx10.13;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -618,6 +620,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F8D4BAD13E974CF004F7633 /* lice.xcconfig */;
 			buildSettings = {
+				DEPLOYMENT_TARGET = 10.6;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -630,7 +633,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = NO;
 				PREBINDING = NO;
-				SDKROOT = "$(BASE_SDK)";
+				SDKROOT = macosx10.12;
 			};
 			name = Debug;
 		};
@@ -638,6 +641,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4F8D4BAD13E974CF004F7633 /* lice.xcconfig */;
 			buildSettings = {
+				DEPLOYMENT_TARGET = 10.6;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(ALL_DEFS)",
@@ -648,7 +652,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = "$(BASE_SDK)";
+				SDKROOT = macosx10.12;
 			};
 			name = Release;
 		};
@@ -669,6 +673,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = lice32;
+				SDKROOT = macosx10.13;
 				SKIP_INSTALL = YES;
 				SYMROOT = "build-mac";
 			};
@@ -689,6 +694,7 @@
 				GCC_SYMBOLS_PRIVATE_EXTERN = YES;
 				INSTALL_PATH = /usr/local/lib;
 				PRODUCT_NAME = lice32;
+				SDKROOT = macosx10.13;
 				SKIP_INSTALL = YES;
 				STRIP_INSTALLED_PRODUCT = YES;
 				STRIP_STYLE = "non-global";
@@ -703,6 +709,7 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				PRODUCT_NAME = All;
+				SDKROOT = macosx10.13;
 			};
 			name = Debug;
 		};
@@ -713,6 +720,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = All;
+				SDKROOT = macosx10.13;
 				ZERO_LINK = NO;
 			};
 			name = Release;

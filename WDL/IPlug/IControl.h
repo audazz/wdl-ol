@@ -384,11 +384,16 @@ protected:
 class IBitmapOverlayControl : public ISwitchControl
 {
 public:
+    
   IBitmapOverlayControl(IPlugBase* pPlug, int x, int y, int paramIdx, IBitmap* pBitmap, IRECT pTargetArea)
     : ISwitchControl(pPlug, x, y, paramIdx, pBitmap), mTargetArea(pTargetArea) {}
 
   IBitmapOverlayControl(IPlugBase* pPlug, int x, int y, IBitmap* pBitmap, IRECT pTargetArea)
     : ISwitchControl(pPlug, x, y, -1, pBitmap), mTargetArea(pTargetArea) {}
+
+  IBitmapOverlayControl(IPlugBase* pPlug, int x, int y, int paramIdx, IBitmap* pBitmap)
+    : ISwitchControl(pPlug, x, y, paramIdx, pBitmap), mTargetArea(x, y, pBitmap) {}
+    
 
   ~IBitmapOverlayControl() {}
 

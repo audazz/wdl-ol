@@ -735,12 +735,8 @@ bool IGraphics::IsDirty(IRECT* pR)
     }
   }
 
-#ifdef USE_IDLE_CALLS
-  if (dirty)
-  {
-    mIdleTicks = 0;
-  }
-  else if (++mIdleTicks > IDLE_TICKS)
+#ifdef USE_IDLE_CALLS  
+  if (++mIdleTicks > IDLE_TICKS)
   {
     OnGUIIdle();
     mIdleTicks = 0;

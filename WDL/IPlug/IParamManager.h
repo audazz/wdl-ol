@@ -2,6 +2,7 @@
 #define _IPARAMMANAGER_
 
 #include "IPlugBase.h"
+#include <queue>
 
 // IParamManager is a simple way of automatically delgating param idxs and
 // registering handlers for param changes. This class must be used entirely for
@@ -14,7 +15,7 @@ class IParamManager
 {
 public:
     IParamManager(IPlugBase* pPlug);
-    ~IParamManager() {}
+    ~IParamManager() { delete[] mHandlers; }
 
     // Should be called by OnParamChange
     void HandleParamChange(int paramIdx);
@@ -34,7 +35,7 @@ public:
 
 private:
     ParamChangeHandler* mHandlers;
-    WDL_PtrList<int> mFreeParamIdxs;
+    std::queue<int> mFreeParamIdxs;
 
     IPlugBase* mPlug;
 };

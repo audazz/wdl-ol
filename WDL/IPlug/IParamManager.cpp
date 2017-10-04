@@ -5,7 +5,7 @@ IParamManager::IParamManager(IPlugBase* pPlug) : mPlug(pPlug)
     mHandlers = new ParamChangeHandler [pPlug->NParams()];
     for (int i = 0; i < pPlug->NParams(); ++i) {
         mHandlers[i] = NULL;
-        mFreeParamIdxs.Add(new int(i));
+        mFreeParamIdxs.push(i);
     }
 }
 
@@ -67,13 +67,10 @@ const int IParamManager::AddDouble(ParamChangeHandler handler, const char* name,
 
 const int IParamManager::GetFreeParamIdx()
 {
-    if (mFreeParamIdxs.GetSize()) 
+    if (mFreeParamIdxs.size()) 
     {
-        // Get next free param idx
-        int paramIdx = *mFreeParamIdxs.Get(0);
-        // Remove param idx from list
-        mFreeParamIdxs.Delete(0);
-
+        int paramIdx = mFreeParamIdxs.front();
+        mFreeParamIdxs.pop();
         return paramIdx;
     } 
     else return -1; // No free params
