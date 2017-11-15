@@ -262,7 +262,7 @@ class IFaderControl : public IControl
 public:
   IFaderControl(IPlugBase* pPlug, int x, int y, int len, int paramIdx, IBitmap* pBitmap,
                 EDirection direction = kVertical, bool onlyHandle = false);
-  ~IFaderControl() {}
+  virtual ~IFaderControl() {}
 
   int GetLength() const { return mLen; }
   // Size of the handle in pixels.
